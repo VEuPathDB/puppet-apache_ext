@@ -4,11 +4,11 @@
 require 'facter'
 
 def httpd_cmd
-  os = Facter.value(:operatingsystem)
+  os = Facter.value(:osfamily)
   case os
-  when "RedHat", "Fedora", "CentOS", "Scientific"
+  when "RedHat"
     cmd = 'httpd'
-  when "Ubuntu", "Debian", "OpenSuSE"
+  when "Debian"
     cmd = 'apache2ctl'
   end
   Facter::Core::Execution.which(cmd) ? cmd : nil
