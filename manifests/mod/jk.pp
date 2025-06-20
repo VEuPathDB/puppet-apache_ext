@@ -3,7 +3,7 @@
 class apache_ext::mod::jk (
   $jkworkersfile = '/etc/httpd/conf/workers.properties',
   $jklogfile     = '/var/log/httpd/mod_jk.log',
-  $jkshmfile     = '/etc/httpd/logs/jk-runtime-status',
+  $jkshmfile     = '/var/cache/httpd/mod_jk/jk.shm',
   $jkloglevel    = 'warning',
 ) {
   apache::mod { 'jk':
