@@ -4,7 +4,7 @@
 # so we need to use php-fpm instead.
 class apache_ext::php_fpm {
   package { "php-fpm":
-    ensure  => $ensure,
+    ensure  => installed,
     require => Package['httpd'],
     notify  => Class['apache::service'],
   }
