@@ -13,11 +13,11 @@ class apache_ext::php_fpm {
 
   file { "php_fpm.conf":
     ensure  => file,
-    path    => "${apache::mod_dir}/${name}",
+    path    => "${apache::mod_dir}/php_fpm.conf",
     owner   => 'root',
     group   =>  $apache::params::group,
     mode    => $apache::file_mode,
-    source => "puppet:///modules/apache_ext/${name}",
+    source => "puppet:///modules/apache_ext/php_fpm.conf",
     notify  => Class['apache::service'],
   }
 
