@@ -15,7 +15,7 @@ class apache_ext::php_fpm {
     ensure  => file,
     path    => "${apache::mod_dir}/${name}",
     owner   => 'root',
-    group   => $root_group,
+    group   =>  $apache::params::group,
     mode    => $apache::file_mode,
     source => "puppet:///modules/apache_ext/${name}",
     notify  => Class['apache::service'],
