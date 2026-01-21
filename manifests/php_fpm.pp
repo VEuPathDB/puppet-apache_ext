@@ -23,7 +23,7 @@ class apache_ext::php_fpm {
 
   file { "/var/log/php-fpm":
     ensure => directory,
-    mode => 775,
+    mode => "775",
     require => Package['php-fpm'],
   }
 
