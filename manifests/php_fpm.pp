@@ -21,4 +21,10 @@ class apache_ext::php_fpm {
     notify  => Class['apache::service'],
   }
 
+  file { "/var/log/php-fpm":
+    ensure => directory,
+    mode => 775,
+    require => Package['php-fpm'],
+  }
+
 }
