@@ -24,6 +24,7 @@ class apache_ext::php_fpm {
   file { "/var/log/php-fpm":
     ensure => directory,
     mode => "775",
+    owner => 'apache',
     require => Package['php-fpm'],
   }
 
